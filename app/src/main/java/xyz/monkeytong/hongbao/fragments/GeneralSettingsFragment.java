@@ -7,10 +7,10 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceManager;
 import xyz.monkeytong.hongbao.R;
 import xyz.monkeytong.hongbao.activities.WebViewActivity;
-import xyz.monkeytong.hongbao.utils.UpdateTask;
 
 /**
  * Created by Zhongyi on 2/4/16.
+ * Adapted by LIAO_S_Z.
  */
 public class GeneralSettingsFragment extends PreferenceFragment {
     @Override
@@ -21,11 +21,28 @@ public class GeneralSettingsFragment extends PreferenceFragment {
     }
 
     private void setPrefListeners() {
-        // Check for updates
+        // Open project homepage
         Preference updatePref = findPreference("pref_etc_check_update");
+        updatePref.setSummary(getString(R.string.url_project_home));
         updatePref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference preference) {
-                new UpdateTask(getActivity().getApplicationContext(), true).update();
+                Intent webViewIntent = new Intent(getActivity(), WebViewActivity.class);
+                webViewIntent.putExtra("title", getString(R.string.webview_github_title));
+                webViewIntent.putExtra("url", getString(R.string.url_project_home));
+                startActivity(webViewIntent);
+                return false;
+            }
+        });
+
+        // Open origin project
+        Preference originPref = findPreference("pref_etc_origin");
+        originPref.setSummary(getString(R.string.about_origin_summary));
+        originPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            public boolean onPreferenceClick(Preference preference) {
+                Intent webViewIntent = new Intent(getActivity(), WebViewActivity.class);
+                webViewIntent.putExtra("title", getString(R.string.about_origin));
+                webViewIntent.putExtra("url", getString(R.string.url_origin));
+                startActivity(webViewIntent);
                 return false;
             }
         });

@@ -1,45 +1,45 @@
- apply plugin: 'com.android.application'
+plugins {
+    id 'com.android.application'
+}
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "26.0.2"
-    useLibrary 'org.apache.http.legacy'
+    namespace 'xyz.monkeytong.hongbao'
+    compileSdk 34
+
     defaultConfig {
         applicationId "xyz.monkeytong.hongbao"
-        minSdkVersion 19
-        targetSdkVersion 25
-        versionCode 7
-        versionName "v5.0.0"
-        ndk {
-            //设置支持的SO库架构
-            abiFilters 'armeabi', 'armeabi-v7a' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
-        }
+        minSdk 21
+        targetSdk 34
+        versionCode 13
+        versionName "v6.5.0"
     }
 
     signingConfigs {
-        releaseConfig {
-            storeFile file("../monkeytong.jks")
-            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : System.getenv("KEYSTORE_PASS")
-            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : System.getenv("ALIAS_NAME")
-            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : System.getenv("ALIAS_PASS")
+        release {
+            storeFile file("../liaoszhongwei-release.jks")
+            storePassword project.hasProperty("KEYSTORE_PASS") ? KEYSTORE_PASS : "liaoszhongwei"
+            keyAlias project.hasProperty("ALIAS_NAME") ? ALIAS_NAME : "liaoszhongwei"
+            keyPassword project.hasProperty("ALIAS_PASS") ? ALIAS_PASS : "liaoszhongwei"
         }
     }
 
     buildTypes {
         release {
-            minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.releaseConfig
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix ".debug"
         }
     }
-}
 
- dependencies {
-     compile fileTree(include: ['*.jar'], dir: 'libs')
-     compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
-     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如1.0.1
-     compile 'com.tencent.bugly:nativecrashreport:latest.release'
-     //其中latest.release指代最新版本号，也可以指定明确的版本号，例如2.2.0
-     compile 'com.android.support:support-v4:25.4.0'
-     compile 'com.android.support:appcompat-v7:25.4.0'
- }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    lint {
+        abortOnError false
+    }
+}

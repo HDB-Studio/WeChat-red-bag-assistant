@@ -1,52 +1,31 @@
 # WeChat Lucky Money
 
-[![Gitter](https://badges.gitter.im/geeeeeeeeek/WeChatLuckyMoney.svg)](https://gitter.im/geeeeeeeeek/WeChatLuckyMoney?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)  [![Build Status](https://travis-ci.org/geeeeeeeeek/WeChatLuckyMoney.svg?branch=stable)](https://travis-ci.org/geeeeeeeeek/WeChatLuckyMoney) [![Docs](https://img.shields.io/badge/文档-中文-blue.svg)](https://github.com/geeeeeeeeek/WeChatLuckyMoney/blob/stable/README.md)
+**Author: HDB-Studio**
 
-This Android app helps you snatch red envelopes in WeChat. It detects red envelopes automatically, and clicks to open them faster than your imagination.
+This project is **based on [monkeytong/WeChatLuckyMoney](https://github.com/monkeytong/WeChatLuckyMoney)** (upstream: [geeeeeeeeek/WeChatLuckyMoney](https://github.com/geeeeeeeeek/WeChatLuckyMoney)), adapted for **WeChat 8.x on Android** and distributed under the original MIT license.
 
-Available in English and Chinese. Please goto the [**Release**](https://github.com/geeeeeeeeek/WeChatLuckyMoney/releases/) page to download the latest version. 
+## What changed
 
-### Spotlights
+- Supports WeChat 8.x chat pages (`Chatting` / `ChattingMainUI`) and the new red packet label「微信红包 / 微信紅包」
+- Supports `.plugin.luckymoney.ui.LuckyMoney`, `LuckyMoneyReceiveUI`, `LuckyMoneyNewReceiveUI`
+- Finds the open button by text / `contentDescription` (`開/开/拆/Open`) instead of resource ids (WeChat 8.0.56+ randomizes ids)
+- No `PackageManager` activity lookups (Android 11+ package visibility)
+- New master switch on the home screen to pause / resume auto-claiming
+- Built-in runtime log and UI node capture for troubleshooting
+- Removed ads, update checker and dead third-party SDKs
+- Modern build: Android 14 (targetSdk 34), AGP 8.7, Gradle 8.x, JDK 17
 
-- **What to watch is at your choice**[[?]](https://github.com/geeeeeeeeek/WeChatLuckyMoney/issues/48)
+## Usage
 
-  Three levels of watch options: `notification`/`chat list`/`chat page`. Whatever a coutious man or an ambitious one you wanna be, the choice is at yours.
+1. Install the APK. On Android 13+, allow "restricted settings" for the app if prompted.
+2. Open the app and enable the accessibility service.
+3. On MIUI/HyperOS set battery saver to "No restrictions" and allow autostart.
+4. Return to WeChat and enjoy.
 
-- **More intelligent algorithm**
+## Disclaimer
 
-  Multiple features used to identify a red envelope. No more repeated clickings. Anti-anti-plugin strategies are protecting the app from disability.
+For learning `AccessibilityService` only. Auto-claiming red packets may violate WeChat's terms of service and can lead to feature restrictions or account bans. Use at your own risk.
 
-- **Auto update checking**
+## License
 
-  Work with the latest version of WeChat. Update available inside your app.
-
-- **Light, safe, and trustful**
-
-  Tha package is as light as 1Mb. With code open sourced, active community discussions, tens of thousands of downloads, it's worth your trust.
-
-### How to use
-
-1. Open the app, turn on the service.
-2. Do whatever you wanna do.
-3. Wait for the lucky money comes in your pocket.
-
-### Implementation
-
-See the [document](https://github.com/geeeeeeeeek/WeChatLuckyMoney/blob/dev/README.md), which is targeted at the dev branch (deprecated) and is IN CHINESE. If it bothers you, leave your message in the [ISSUES](https://github.com/geeeeeeeeek/WeChatLuckyMoney/issues).
-
-### Update history
-
-For full history, see [CHANGELOG](https://github.com/geeeeeeeeek/WeChatLuckyMoney/blob/stable/CHANGELOG.md).
-
-### License
-
-The project was heavily inspired by the [app](https://github.com/XiaoMi/LuckyMoneyTool) demonstrated on XiaoMi's news conference for its phone product last autumn. 
-
-This app might alter the natural way of interactions with WeChat. When you are using the code and its accessories, you are fully responsible for any possible consequences.
-
-The project is licensed to the [MIT](https://github.com/geeeeeeeeek/WeChatLuckyMoney/blob/stable/LICENSE.md).
-
-### Snapshots
-
-![wechatimg157](https://cloud.githubusercontent.com/assets/7262715/22361930/999aecdc-e499-11e6-91f6-c8c44b9ccc55.png)
-![wechatimg158](https://cloud.githubusercontent.com/assets/7262715/22361929/99998126-e499-11e6-93bc-e97ea263db47.jpeg)
+[MIT](LICENSE.md). Original copyright belongs to the upstream authors.

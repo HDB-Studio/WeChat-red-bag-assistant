@@ -10,18 +10,16 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.CookieSyncManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.TextView;
-import android.widget.Toast;
 import xyz.monkeytong.hongbao.R;
-import xyz.monkeytong.hongbao.utils.DownloadUtil;
 
 /**
  * Created by Zhongyi on 1/19/16.
  * Settings page.
+ * Adapted by LIAO_S_Z.
  */
 public class WebViewActivity extends Activity {
     private WebView webView;
@@ -49,23 +47,15 @@ public class WebViewActivity extends Activity {
             webView.setWebViewClient(new WebViewClient() {
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                    if (url.contains("apk")) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.download_backend), Toast.LENGTH_SHORT).show();
-                        (new DownloadUtil()).enqueue(url, getApplicationContext());
-                        return true;
-                    } else if (!url.contains("http")) {
-                        Toast.makeText(getApplicationContext(), getString(R.string.download_redirect), Toast.LENGTH_LONG).show();
-                        webViewBar.setText(getString(R.string.download_hint));
-                        return false;
-                    } else {
+                    if (url.startsWith("http://") || url.startsWith("https://")) {
                         view.loadUrl(url);
-                        return false;
+                        return true;
                     }
-                }
-
-                @Override
-                public void onPageFinished(WebView view, String url) {
-                    CookieSyncManager.getInstance().sync();
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                    } catch (Exception ignored) {
+                    }
+                    return true;
                 }
             });
             webView.loadUrl(webViewUrl);

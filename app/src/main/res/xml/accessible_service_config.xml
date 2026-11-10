@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <accessibility-service
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:description="@string/app_description"
     android:accessibilityEventTypes="typeWindowStateChanged|typeWindowContentChanged|typeNotificationStateChanged"
-    android:accessibilityFeedbackType="feedbackAllMask"
-    android:packageNames="com.tencent.mm"
-    android:notificationTimeout="10"
+    android:accessibilityFeedbackType="feedbackGeneric"
+    android:notificationTimeout="50"
     android:settingsActivity="xyz.monkeytong.hongbao.activities.SettingsActivity"
-    android:accessibilityFlags="flagDefault"
-    android:canRetrieveWindowContent="true"/>
+    android:accessibilityFlags="flagDefault|flagReportViewIds|flagRetrieveInteractiveWindows|flagIncludeNotImportantViews"
+    android:canRetrieveWindowContent="true"
+    android:canPerformGestures="true"
+    android:isAccessibilityTool="false"
+    tools:targetApi="31"/>

@@ -34,6 +34,53 @@
                   android:textColor="#fff"
                   android:gravity="center_vertical|center_horizontal"
                   android:layout_marginTop="4dp"/>
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="#33FFFFFF"
+                    android:onClick="openLog"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/log_open"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:background="#33FFFFFF"
+                    android:onClick="captureWindow"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/log_capture"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"/>
+            <TextView
+                    android:id="@+id/btn_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#33FFFFFF"
+                    android:onClick="togglePlugin"
+                    android:paddingBottom="8dp"
+                    android:paddingEnd="16dp"
+                    android:paddingStart="16dp"
+                    android:paddingTop="8dp"
+                    android:singleLine="true"
+                    android:text="@string/switch_pause"
+                    android:textColor="#ffffff"
+                    android:textSize="14sp"/>
+        </LinearLayout>
     </LinearLayout>
     <ImageView
             android:layout_width="match_parent"
@@ -45,7 +92,7 @@
                   android:orientation="horizontal"
                   android:layout_width="match_parent"
                   android:layout_height="110dp"
-                  android:layout_above="@+id/layout_alipay"
+                  android:layout_above="@+id/linearLayout2"
                   android:layout_marginLeft="12dp"
                   android:layout_marginRight="12dp"
                   android:layout_marginTop="8dp"
@@ -126,49 +173,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/layout_alipay"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:layout_above="@+id/linearLayout2"
-        android:layout_alignParentBottom="false"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="8dp"
-        android:background="#ffffff"
-        android:onClick="openUber"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/icon_uber"
-            android:layout_width="52dp"
-            android:layout_height="52dp"
-            android:layout_gravity="center_vertical"
-            android:layout_marginBottom="2dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginStart="8dp"
-            android:contentDescription="@string/todo"
-            android:src="@mipmap/icon_alipay" />
-
-        <LinearLayout
-            android:id="@+id/layout_uber_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/label_uber_link"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="7dp"
-                android:text="@string/alipay_ad_text"
-                android:textColor="#e46c62"
-                android:textStyle="bold"
-                android:gravity="center" />
-        </LinearLayout>
-    </LinearLayout>
     <LinearLayout android:id="@+id/linearLayout2"
                   android:orientation="horizontal"
                   android:layout_width="match_parent"

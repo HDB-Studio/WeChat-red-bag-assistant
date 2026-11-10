@@ -20,14 +20,27 @@ public class PowerUtil {
     }
 
     private void acquire() {
-        wakeLock.acquire(1800000);
-        keyguardLock.disableKeyguard();
+        try {
+            wakeLock.acquire(1800000);
+        } catch (Exception ignored) {
+        }
+        try {
+            keyguardLock.disableKeyguard();
+        } catch (Exception ignored) {
+            // Android 12+ 对锁屏解锁做了更严格的限制
+        }
     }
 
     private void release() {
-        if (wakeLock.isHeld()) {
-            wakeLock.release();
+        try {
+            if (wakeLock.isHeld()) {
+                wakeLock.release();
+            }
+        } catch (Exception ignored) {
+        }
+        try {
             keyguardLock.reenableKeyguard();
+        } catch (Exception ignored) {
         }
     }
 

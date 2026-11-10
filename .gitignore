@@ -9,3 +9,5 @@
 /.idea/dictionaries
 /monkeytong.jks
 /app/release
+*.apk
+*.jks

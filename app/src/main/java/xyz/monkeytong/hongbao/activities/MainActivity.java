@@ -5,6 +5,7 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,10 +17,9 @@ import android.view.accessibility.AccessibilityManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.tencent.bugly.Bugly;
 import xyz.monkeytong.hongbao.R;
-import xyz.monkeytong.hongbao.utils.ConnectivityUtil;
-import xyz.monkeytong.hongbao.utils.UpdateTask;
+import xyz.monkeytong.hongbao.services.HongbaoService;
+import xyz.monkeytong.hongbao.utils.HongbaoLog;
 
 import java.util.List;
 
@@ -29,17 +29,24 @@ public class MainActivity extends Activity implements AccessibilityManager.Acces
     //开关切换按钮
     private TextView pluginStatusText;
     private ImageView pluginStatusIcon;
+    //总开关：无障碍已开启时，是否真正自动抢红包
+    private TextView switchButton;
+    private SharedPreferences preferences;
     //AccessibilityService 管理
     private AccessibilityManager accessibilityManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //CrashReport.initCrashReport(getApplicationContext(), "900019352", false);
-        Bugly.init(getApplicationContext(), "900019352", false);
         setContentView(R.layout.activity_main);
+
+        HongbaoLog.init(this);
+        HongbaoLog.d("ui", "打开主界面");
+
         pluginStatusText = (TextView) findViewById(R.id.layout_control_accessibility_text);
         pluginStatusIcon = (ImageView) findViewById(R.id.layout_control_accessibility_icon);
+        switchButton = (TextView) findViewById(R.id.btn_switch);
+        preferences = PreferenceManager.getDefaultSharedPreferences(this);
 
         handleMaterialStatusBar();
 
@@ -83,9 +90,6 @@ public class MainActivity extends Activity implements AccessibilityManager.Acces
         super.onResume();
 
         updateServiceStatus();
-        // Check for update when WIFI is connected or on first time.
-        if (ConnectivityUtil.isWifi(this) || UpdateTask.count == 0)
-            new UpdateTask(this, false).update();
     }
 
     @Override
@@ -110,14 +114,7 @@ public class MainActivity extends Activity implements AccessibilityManager.Acces
     public void openGitHub(View view) {
         Intent webViewIntent = new Intent(this, WebViewActivity.class);
         webViewIntent.putExtra("title", getString(R.string.webview_github_title));
-        webViewIntent.putExtra("url", "https://github.com/geeeeeeeeek/WeChatLuckyMoney");
-        startActivity(webViewIntent);
-    }
-
-    public void openUber(View view) {
-        Intent webViewIntent = new Intent(this, WebViewActivity.class);
-        webViewIntent.putExtra("title", getString(R.string.webview_alipay_title));
-        String[] couponList = new String[]{"https://render.alipay.com/p/f/fd-j6lzqrgm/guiderofmklvtvw.html?shareId=2088422430692204&campStr=p1j%2BdzkZl018zOczaHT4Z5CLdPVCgrEXq89JsWOx1gdt05SIDMPg3PTxZbdPw9dL&sign=DEqbE64SUB0qjRQGtu%2F0BPXN9YsSXM2zqLHT1X2ufDs%3D&scene=offlinePaymentNewSns"};
+        webViewIntent.putExtra("url", getString(R.string.url_project_home));
         startActivity(webViewIntent);
     }
 
@@ -126,6 +123,41 @@ public class MainActivity extends Activity implements AccessibilityManager.Acces
         settingsIntent.putExtra("title", getString(R.string.preference));
         settingsIntent.putExtra("frag_id", "GeneralSettingsFragment");
         startActivity(settingsIntent);
+    }
+
+    public void openLog(View view) {
+        startActivity(new Intent(this, LogActivity.class));
+    }
+
+    /**
+     * 5 秒后抓取当前前台界面节点，方便用户切到微信红包页面后采集诊断信息。
+     */
+    public void captureWindow(View view) {
+        HongbaoLog.d("ui", "用户请求抓取界面节点");
+        if (HongbaoService.requestCapture("手动抓取")) {
+            Toast.makeText(this, R.string.log_capture_toast, Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(this, R.string.log_service_required, Toast.LENGTH_LONG).show();
+        }
+    }
+
+
+    /**
+     * 总开关：无障碍服务已开启时，决定是否真正执行自动抢红包。
+     * 关闭后服务仍在运行（只记录日志），但不会点击任何红包。
+     */
+    public void togglePlugin(View view) {
+        if (!isServiceEnabled()) {
+            Toast.makeText(this, R.string.switch_need_service_toast, Toast.LENGTH_SHORT).show();
+            return;
+        }
+        boolean running = preferences.getBoolean(HongbaoService.PREF_ENABLED, true);
+        boolean next = !running;
+        preferences.edit().putBoolean(HongbaoService.PREF_ENABLED, next).apply();
+        HongbaoLog.d("ui", "自动抢红包总开关=" + next);
+        Toast.makeText(this, next ? R.string.switch_resumed_toast : R.string.switch_paused_toast,
+                Toast.LENGTH_SHORT).show();
+        updateServiceStatus();
     }
 
 
@@ -138,12 +170,23 @@ public class MainActivity extends Activity implements AccessibilityManager.Acces
      * 更新当前 HongbaoService 显示状态
      */
     private void updateServiceStatus() {
-        if (isServiceEnabled()) {
+        boolean enabled = isServiceEnabled();
+        HongbaoLog.d("ui", "无障碍服务状态=" + enabled);
+        if (enabled) {
             pluginStatusText.setText(R.string.service_off);
             pluginStatusIcon.setBackgroundResource(R.mipmap.ic_stop);
         } else {
             pluginStatusText.setText(R.string.service_on);
             pluginStatusIcon.setBackgroundResource(R.mipmap.ic_start);
+        }
+
+        boolean running = preferences.getBoolean(HongbaoService.PREF_ENABLED, true);
+        if (enabled) {
+            switchButton.setText(running ? R.string.switch_pause : R.string.switch_resume);
+            switchButton.setAlpha(1f);
+        } else {
+            switchButton.setText(R.string.switch_need_service);
+            switchButton.setAlpha(0.55f);
         }
     }
 
