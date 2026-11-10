@@ -10,8 +10,8 @@ android {
         applicationId "xyz.monkeytong.hongbao"
         minSdk 21
         targetSdk 34
-        versionCode 16
-        versionName "v6.6.2"
+        versionCode 17
+        versionName "v6.6.3"
     }
 
     signingConfigs {

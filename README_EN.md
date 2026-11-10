@@ -26,10 +26,11 @@ This project is **based on [monkeytong/WeChatLuckyMoney](https://github.com/monk
 
 ## Disclaimer
 
-**For personal study and research only. Commercial use is prohibited.**
+**Standard MIT license, no additional restrictions. The author *requests* (not requires) that this project be used for personal study and research only; commercial use is discouraged.**
 
-- [DISCLAIMER.md](DISCLAIMER.md) — full disclaimer (purpose limitation, no warranty, limitation of liability)
+- [DISCLAIMER.md](DISCLAIMER.md) — use notice and disclaimer (author request, no warranty, limitation of liability)
 - [NOTICE.md](NOTICE.md) — attribution chain and third-party licenses
+- Under MIT anyone may use, modify, redistribute and even sell this software; "no commercial use" is only a request
 - Not affiliated with, endorsed by, or authorized by Tencent or WeChat
 - Auto-claiming red packets may violate WeChat's terms of service and can lead to feature restrictions or account bans. Use at your own risk
 - Provided "AS IS", without warranty of any kind; authors accept no liability for damages
