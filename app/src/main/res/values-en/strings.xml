@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Lucky Money</string>
-    <string name="app_version">v6.5.0 · HDB-Studio</string>
+    <string name="app_version">v6.6.0 · HDB-Studio</string>
     <string name="app_description">∠( ᐛ 」∠)_ Instructions ∠( ᐛ 」∠)_\n\n ○ Turn on the Accessibility switch\n ○ Go back to WeChat\n ○ Wait for money comes in\n\n Author: HDB-Studio\n Based on monkeytong/WeChatLuckyMoney, adapted for WeChat 8.x</string>
     <string name="preference">Preferences</string>
     <string name="update_error">An error occurred. Please manually update from GitHub Release Page. (ฅ´ω`ฅ)</string>
@@ -12,8 +12,8 @@
     <string name="service_on">Turn On</string>
     <string name="pref_watch_exclude_words_summary">Skip red packets with these phrases (separated by space)</string>
     <string name="pref_comment_words_summary">Randomly choose reply from these phrases (separated by space)</string>
-    <string name="url_github_issues">https://github.com/HDB-Studio/WeChatLuckyMoney/issues</string>
-    <string name="url_project_home">https://github.com/HDB-Studio/WeChatLuckyMoney</string>
+    <string name="url_github_issues">https://github.com/HDB-Studio/WeChat-red-bag-assistant/issues</string>
+    <string name="url_project_home">https://github.com/HDB-Studio/WeChat-red-bag-assistant</string>
     <string name="url_origin">https://github.com/monkeytong/WeChatLuckyMoney</string>
     <string name="home_banner_ad_unit_id">ca-app-pub-8428619221469478/4736153346</string>
     <string name="webview_banner_ad_unit_id">ca-app-pub-8428619221469478/4163694548</string>

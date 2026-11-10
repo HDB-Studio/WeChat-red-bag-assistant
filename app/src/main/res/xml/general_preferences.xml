@@ -60,7 +60,7 @@
         <Preference
                 android:key="pref_etc_check_update"
                 android:title="@string/check_new_version"
-                android:summary="https://github.com/HDB-Studio/WeChatLuckyMoney"
+                android:summary="https://github.com/HDB-Studio/WeChat-red-bag-assistant"
                 android:layout="@layout/preference_checkbox"/>
         <Preference
                 android:key="pref_etc_issue"

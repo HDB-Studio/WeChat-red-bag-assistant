@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">微信红包</string>
-    <string name="app_version">v6.5.0 · HDB-Studio</string>
+    <string name="app_version">v6.6.0 · HDB-Studio</string>
     <string name="app_description">∠( ᐛ 」∠)_使用指南∠( ᐛ 」∠)_\n\n ○ 狠戳插件开关\n ○ 回到微信聊天\n ○ 坐等红包进账\n\n 作者：HDB-Studio\n 本项目基于 monkeytong/WeChatLuckyMoney 修改，已适配微信 8.x 最新版本\n 安卓 13+ 若无法开启无障碍，请先在应用信息里允许「受限设置」</string>
     <string name="log_open">运行日志</string>
     <string name="switch_pause">暂停抢红包</string>
@@ -32,8 +32,8 @@
     <string name="service_on">开启插件</string>
     <string name="pref_watch_exclude_words_summary">不拆开包含这些文字的红包(空格间隔)</string>
     <string name="pref_comment_words_summary">随机选择下列感谢语(空格间隔)</string>
-    <string name="url_github_issues">https://github.com/HDB-Studio/WeChatLuckyMoney/issues</string>
-    <string name="url_project_home">https://github.com/HDB-Studio/WeChatLuckyMoney</string>
+    <string name="url_github_issues">https://github.com/HDB-Studio/WeChat-red-bag-assistant/issues</string>
+    <string name="url_project_home">https://github.com/HDB-Studio/WeChat-red-bag-assistant</string>
     <string name="url_origin">https://github.com/monkeytong/WeChatLuckyMoney</string>
     <string name="home_banner_ad_unit_id">ca-app-pub-8428619221469478/4736153346</string>
     <string name="webview_banner_ad_unit_id">ca-app-pub-8428619221469478/4163694548</string>
