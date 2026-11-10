@@ -35,10 +35,21 @@ gradle assembleRelease
 
 > 签名：仓库不包含签名密钥（`.jks` 已被忽略），自行打包时请在 `app/build.gradle` 的 `signingConfigs` 中填入自己的密钥。
 
-## 免责声明
+## 授权与免责（务必阅读）
 
-本项目仅供学习 Android 无障碍服务（AccessibilityService）使用。自动抢红包可能违反微信用户协议，存在被限制红包功能或封号的风险，请自行承担使用后果。
+> **本项目仅供个人学习、研究与技术交流使用，禁止任何商业用途。**
+
+- [LICENSE.md](LICENSE.md)：MIT 许可证（继承自上游，上游版权声明保留）
+- [DISCLAIMER.md](DISCLAIMER.md)：完整免责声明（用途限制、无担保、责任限制、风险自负）
+- [NOTICE.md](NOTICE.md)：来源链条与第三方组件授权
+
+要点：
+
+- 与腾讯公司及微信官方**无任何关联**，未获授权或背书
+- 自动化抢红包可能**违反微信用户协议**，可能导致账号被限制或封禁，后果自负
+- 软件按「现状」提供，无任何担保；作者不承担使用产生的任何损害赔偿责任
+- 下载、安装或使用即视为同意上述条款；不同意请勿使用
 
 ## 许可证
 
-[MIT](LICENSE.md)，原项目版权归其原作者所有。
+MIT © 2026 HDB-Studio，上游版权归 Zhongyi Tong（geeeeeeeeek / monkeytong）所有。

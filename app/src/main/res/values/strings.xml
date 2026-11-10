@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">微信红包</string>
-    <string name="app_version">v6.6.0 · HDB-Studio</string>
-    <string name="app_description">∠( ᐛ 」∠)_使用指南∠( ᐛ 」∠)_\n\n ○ 狠戳插件开关\n ○ 回到微信聊天\n ○ 坐等红包进账\n\n 作者：HDB-Studio\n 本项目基于 monkeytong/WeChatLuckyMoney 修改，已适配微信 8.x 最新版本\n 安卓 13+ 若无法开启无障碍，请先在应用信息里允许「受限设置」</string>
+    <string name="app_version">v6.6.1 · HDB-Studio</string>
+    <string name="app_description">∠( ᐛ 」∠)_使用指南∠( ᐛ 」∠)_\n\n ○ 狠戳插件开关\n ○ 回到微信聊天\n ○ 坐等红包进账\n\n 作者：HDB-Studio\n 本项目基于 monkeytong/WeChatLuckyMoney 修改，已适配微信 8.x 最新版本\n\n 仅供个人学习研究，禁止商业用途，与腾讯公司无任何关联\n 使用风险自负（可能导致账号受限或封禁）\n\n 安卓 13+ 若无法开启无障碍，请先在应用信息里允许「受限设置」</string>
     <string name="log_open">运行日志</string>
     <string name="switch_pause">暂停抢红包</string>
     <string name="switch_resume">恢复抢红包</string>

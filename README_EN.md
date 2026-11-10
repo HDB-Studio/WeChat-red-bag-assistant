@@ -24,8 +24,14 @@ This project is **based on [monkeytong/WeChatLuckyMoney](https://github.com/monk
 
 ## Disclaimer
 
-For learning `AccessibilityService` only. Auto-claiming red packets may violate WeChat's terms of service and can lead to feature restrictions or account bans. Use at your own risk.
+**For personal study and research only. Commercial use is prohibited.**
+
+- [DISCLAIMER.md](DISCLAIMER.md) — full disclaimer (purpose limitation, no warranty, limitation of liability)
+- [NOTICE.md](NOTICE.md) — attribution chain and third-party licenses
+- Not affiliated with, endorsed by, or authorized by Tencent or WeChat
+- Auto-claiming red packets may violate WeChat's terms of service and can lead to feature restrictions or account bans. Use at your own risk
+- Provided "AS IS", without warranty of any kind; authors accept no liability for damages
 
 ## License
 
-[MIT](LICENSE.md). Original copyright belongs to the upstream authors.
+[MIT](LICENSE.md) © 2026 HDB-Studio. Upstream copyright belongs to Zhongyi Tong (geeeeeeeeek / monkeytong).

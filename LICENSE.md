@@ -1,8 +1,10 @@
 **The MIT License (MIT)**
 
-Copyright (c) 2026 LIAO_S_Z
+Copyright (c) 2026 HDB-Studio (https://github.com/HDB-Studio)
 
-Based on the original work Copyright (c) 2016 Zhongyi Tong ([geeeeeeeeek@Github](https://github.com/geeeeeeeeek))
+Based on the original work Copyright (c) 2016 Zhongyi Tong ([geeeeeeeeek@Github](https://github.com/geeeeeeeeek), [monkeytong@Github](https://github.com/monkeytong))
+
+> 附加使用声明：本项目仅供个人学习研究，禁止商业用途，详见 [DISCLAIMER.md](DISCLAIMER.md)。该附加声明不改变上述 MIT 授权条款对上游代码的适用。
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
