@@ -1,6 +1,8 @@
-# WeChat Lucky Money
+# WeChatRedPacketAssistant
 
 **Author: HDB-Studio**
+
+Project / repository / app name / app description are all unified as **WeChatRedPacketAssistant**.
 
 This project is **based on [monkeytong/WeChatLuckyMoney](https://github.com/monkeytong/WeChatLuckyMoney)** (upstream: [geeeeeeeeek/WeChatLuckyMoney](https://github.com/geeeeeeeeek/WeChatLuckyMoney)), adapted for **WeChat 8.x on Android** and distributed under the original MIT license.
 

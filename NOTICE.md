@@ -4,7 +4,7 @@
 
 | 项目 | 作者 | 地址 | 许可证 |
 |---|---|---|---|
-| 本项目（WeChat-red-bag-assistant） | HDB-Studio | https://github.com/HDB-Studio/WeChat-red-bag-assistant | MIT（见 LICENSE.md） |
+| 本项目（WeChatRedPacketAssistant） | HDB-Studio | https://github.com/HDB-Studio/WeChatRedPacketAssistant | MIT（见 LICENSE.md） |
 | 直接上游 WeChatLuckyMoney | Zhongyi Tong (monkeytong) | https://github.com/monkeytong/WeChatLuckyMoney | MIT |
 | 原始项目 WeChatLuckyMoney | Zhongyi Tong (geeeeeeeeek) | https://github.com/geeeeeeeeek/WeChatLuckyMoney | MIT |
 

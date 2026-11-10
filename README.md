@@ -1,6 +1,8 @@
-# 微信红包（WeChatLuckyMoney）
+# WeChatRedPacketAssistant
 
 > **作者：HDB-Studio**
+>
+> 项目名 / 仓库名 / 应用名 / 应用介绍统一为 **WeChatRedPacketAssistant**。
 >
 > 本项目**基于 [monkeytong/WeChatLuckyMoney](https://github.com/monkeytong/WeChatLuckyMoney) 修改**（其上游为 [geeeeeeeeek/WeChatLuckyMoney](https://github.com/geeeeeeeeek/WeChatLuckyMoney)），
 > 并针对 **微信 8.x（Android）** 重新适配，遵循原项目的 MIT 许可证。
