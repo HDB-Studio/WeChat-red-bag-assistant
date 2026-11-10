@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">WeChatRedPacketAssistant</string>
-    <string name="app_version">v6.6.3 · HDB-Studio</string>
+    <string name="app_version">v6.6.4 · HDB-Studio</string>
     <string name="app_description">WeChatRedPacketAssistant\n∠( ᐛ 」∠)_ Instructions ∠( ᐛ 」∠)_\n\n ○ Turn on the Accessibility switch\n ○ Go back to WeChat\n ○ Wait for money comes in\n\n Author: HDB-Studio\n Based on monkeytong/WeChatLuckyMoney, adapted for WeChat 8.x\n\n For personal study only (commercial use discouraged). Not affiliated with Tencent.\n Use at your own risk.</string>
     <string name="preference">Preferences</string>
     <string name="update_error">An error occurred. Please manually update from GitHub Release Page. (ฅ´ω`ฅ)</string>
