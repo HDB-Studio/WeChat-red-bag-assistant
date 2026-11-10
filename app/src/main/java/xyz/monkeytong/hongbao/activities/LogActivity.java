@@ -15,7 +15,7 @@ import xyz.monkeytong.hongbao.utils.HongbaoLog;
 
 /**
  * 运行日志查看页：支持刷新、分享、复制、清空。
- * 作者：LIAO_S_Z
+ * 作者：HDB-Studio
  */
 public class LogActivity extends Activity {
     private TextView logText;

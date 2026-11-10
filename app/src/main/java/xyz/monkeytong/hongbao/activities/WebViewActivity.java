@@ -19,7 +19,7 @@ import xyz.monkeytong.hongbao.R;
 /**
  * Created by Zhongyi on 1/19/16.
  * Settings page.
- * Adapted by LIAO_S_Z.
+ * Adapted by HDB-Studio.
  */
 public class WebViewActivity extends Activity {
     private WebView webView;

@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
  * 微信 7.x/8.x 之后气泡层级发生变化，这里改为从“领取红包/查看红包”文本节点出发，
  * 向上寻找真实的气泡容器，不再依赖固定的节点层级。
  *
- * Adapted by LIAO_S_Z.
+ * Adapted by HDB-Studio.
  */
 public class HongbaoSignature {
     public String sender, content, time, contentDescription = "", commentString;

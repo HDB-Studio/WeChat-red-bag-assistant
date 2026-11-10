@@ -15,7 +15,7 @@ import java.util.Locale;
 
 /**
  * 轻量运行日志：写入应用私有目录，方便在无法连接电脑时直接在应用内查看/分享。
- * 作者：LIAO_S_Z
+ * 作者：HDB-Studio
  */
 public final class HongbaoLog {
     private static final String TAG = "HongbaoLog";

@@ -10,7 +10,7 @@ import xyz.monkeytong.hongbao.activities.WebViewActivity;
 
 /**
  * Created by Zhongyi on 2/4/16.
- * Adapted by LIAO_S_Z.
+ * Adapted by HDB-Studio.
  */
 public class GeneralSettingsFragment extends PreferenceFragment {
     @Override

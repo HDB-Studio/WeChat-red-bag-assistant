@@ -34,7 +34,7 @@ import xyz.monkeytong.hongbao.utils.PowerUtil;
  * - 不再通过 PackageManager 查询 Activity（Android 11+ 包可见性限制会导致查询失败），直接使用事件类名；
  * - 点击失效时使用 dispatchGesture 在按钮中心补点，替代旧的固定像素坐标。
  *
- * Adapted by LIAO_S_Z.
+ * Adapted by HDB-Studio.
  */
 public class HongbaoService extends AccessibilityService implements SharedPreferences.OnSharedPreferenceChangeListener {
     private static final String TAG = "HongbaoService";

@@ -26,7 +26,7 @@ import xyz.monkeytong.hongbao.fragments.GeneralSettingsFragment;
 /**
  * Created by Zhongyi on 1/19/16.
  * Settings page.
- * Adapted by LIAO_S_Z.
+ * Adapted by HDB-Studio.
  */
 public class SettingsActivity extends Activity {
     @Override
